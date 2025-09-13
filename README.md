@@ -1,17 +1,29 @@
 # VMware vSphere 8 – Install, Configure, Manage 🔧
 
+[![Content Validation](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/actions/workflows/content-validation.yml/badge.svg)](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/actions/workflows/content-validation.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
 ![Training Duration](https://img.shields.io/badge/Duration-5%20Days-blue)  
 ![Audience: Administrators & Engineers](https://img.shields.io/badge/Audience-Admins%20%7C%20Engineers-green)  
 ![vSphere 8.0](https://img.shields.io/badge/vSphere-8.0-orange)  
-![Status: Learning Material](https://img.shields.io/badge/Status-Learning%20Material-lightgrey)
+![Modules: 10](https://img.shields.io/badge/Modules-10-brightgreen)
+![Labs: 15+](https://img.shields.io/badge/Labs-15+-blue)
+![Status: Production Ready](https://img.shields.io/badge/Status-Production%20Ready-success)
 
 ---
 
 ## Overview
 
-**VMware vSphere 8 – Install, Configure, Manage** is a comprehensive training program combining theoretical foundation with hands-on labs to equip virtualization professionals with the skills to design, deploy, and operate vSphere 8 environments.  
-**Version:** 1.0 · **Author:** LT
+**VMware vSphere 8 – Install, Configure, Manage** is an enterprise-grade training program combining theoretical foundation with hands-on labs to equip virtualization professionals with the skills to design, deploy, and operate vSphere 8 environments.
+
+🎯 **Key Features:**
+- 📚 **10 Comprehensive Modules** with progressive learning
+- 🛠️ **15+ Hands-on Labs** with real-world scenarios  
+- 🤖 **Automated Lab Setup** with PowerCLI scripts
+- 📈 **Assessment Tools** and progress tracking
+- 🔒 **Production-Ready** content with CI/CD validation
+- 🌐 **Multi-Format Delivery** (classroom, virtual, self-paced)
+
+**Version:** 2.0 · **Enterprise Training Platform**
 
 ---
 
