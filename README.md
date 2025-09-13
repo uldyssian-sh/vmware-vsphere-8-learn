@@ -115,4 +115,4 @@
 Your feedback is welcome!  
 For corrections, suggestions, or private training requests:  
 - Open a GitHub Issue  
-- Contact **LT** directly  
+- Contact **LT** - [GitHub Profile](https://github.com/uldyssian-sh) directly  
