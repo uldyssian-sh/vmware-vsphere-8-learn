@@ -15,6 +15,8 @@
 
 **VMware vSphere 8 – Install, Configure, Manage** is an enterprise-grade training program combining theoretical foundation with hands-on labs to equip virtualization professionals with the skills to design, deploy, and operate vSphere 8 environments.
 
+**Author**: LT - [GitHub Profile](https://github.com/uldyssian-sh)
+
 🎯 **Key Features:**
 - 📚 **10 Comprehensive Modules** with progressive learning
 - 🛠️ **15+ Hands-on Labs** with real-world scenarios  
