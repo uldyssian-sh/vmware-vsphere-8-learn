@@ -155,6 +155,8 @@ class AssessmentGenerator:
             "Manage your time effectively throughout the assessment"
         ]
         
+        # Note: Assessment type restrictions should be enforced server-side
+        # This is just for display purposes
         type_specific = {
             "module": [
                 "This assessment covers material from the specified training modules",
@@ -162,7 +164,7 @@ class AssessmentGenerator:
             ],
             "final": [
                 "This is a comprehensive assessment covering all course material",
-                "No external resources are permitted during this assessment",
+                "Resource restrictions are enforced by the assessment system",
                 "Ensure all answers are your own work"
             ],
             "practice": [
@@ -191,7 +193,7 @@ class AssessmentGenerator:
                 "scenario": 10.0
             },
             "passing_score": 70,
-            "retake_policy": "One retake allowed within 48 hours"
+            "retake_policy": "Retake policy enforced by assessment system"
         }
     
     def export_assessment(self, assessment: Dict[str, Any], format: str = "json") -> str:
