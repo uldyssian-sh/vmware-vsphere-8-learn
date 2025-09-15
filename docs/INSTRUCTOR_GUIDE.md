@@ -1,9 +1,9 @@
 # VMware vSphere 8 Training - Instructor Guide
 
 ## Course Overview
-**Duration**: 5 days (40 hours)  
-**Format**: Instructor-led with hands-on labs  
-**Class Size**: Maximum 16 participants  
+**Duration**: 5 days (40 hours)
+**Format**: Instructor-led with hands-on labs
+**Class Size**: Maximum 16 participants
 **Delivery**: In-person or virtual
 
 ## Prerequisites Validation

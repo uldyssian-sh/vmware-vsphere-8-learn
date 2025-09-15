@@ -1,8 +1,8 @@
 # Lab 1: Environment Setup and Initial Configuration
 
 ## Lab Overview
-**Duration**: 60 minutes  
-**Difficulty**: Beginner  
+**Duration**: 60 minutes
+**Difficulty**: Beginner
 **Prerequisites**: Access to vSphere 8 lab environment
 
 ## Learning Objectives
