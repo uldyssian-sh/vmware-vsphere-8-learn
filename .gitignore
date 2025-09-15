@@ -70,3 +70,14 @@ student-submissions/
 instructor-notes/
 assessment-results/
 lab-snapshots/
+# Performance optimization
+*.log
+*.tmp
+*.cache
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+node_modules/
+.vscode/settings.json
+.idea/
