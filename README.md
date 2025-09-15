@@ -7,7 +7,14 @@
 
 ## 🎯 Overview
 
-Enterprise-grade vmware vsphere 8 learn solution with professional automation, security, and scalability features.
+Professional vmware vsphere 8 learn solution with enterprise-grade automation and security features.
+
+## 📊 Repository Stats
+
+- **Files:**       34
+- **Technologies:** Python PowerShell YAML
+- **Type:** Infrastructure Automation
+- **Status:** Production Ready
 
 ## ✨ Features
 
@@ -23,11 +30,37 @@ Enterprise-grade vmware vsphere 8 learn solution with professional automation, s
 ## 🚀 Quick Start
 
 ```bash
+# Clone repository
 git clone https://github.com/uldyssian-sh/vmware-vsphere-8-learn.git
 cd vmware-vsphere-8-learn
+
+# Setup environment
 chmod +x setup.sh
 ./setup.sh
 ```
+
+
+## 🐍 Python Scripts
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run main script
+python main.py
+```
+
+
+## ⚡ PowerShell Scripts
+
+```powershell
+# Set execution policy
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# Run main script
+.\main.ps1
+```
+
 
 ## 📚 Documentation
 
@@ -47,8 +80,8 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file.
 
 ## 🆘 Support
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/issues)
-- 📖 **Documentation**: [Wiki](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/wiki)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/uldyssian-sh/REPO_NAME/issues)
+- 📖 **Documentation**: [Wiki](https://github.com/uldyssian-sh/REPO_NAME/wiki)
 
 ---
 
