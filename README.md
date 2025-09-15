@@ -1,5 +1,22 @@
 # VMware vSphere 8 – Install, Configure, Manage 🔧
 
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
+
+## Prerequisites
+
+Before using this project, ensure you have:
+- Required tools and dependencies
+- Proper access credentials
+- System requirements met
+
+
 [![Content Validation](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/actions/workflows/content-validation.yml/badge.svg)](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/actions/workflows/content-validation.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Training Duration](https://img.shields.io/badge/Duration-5%20Days-blue)
@@ -118,3 +135,21 @@ Your feedback is welcome!
 For corrections, suggestions, or private training requests:
 - Open a GitHub Issue
 - Contact **LT** - [GitHub Profile](https://github.com/uldyssian-sh) directly
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on:
+- How to submit issues
+- How to propose changes
+- Code style guidelines
+- Review process
+
+## Support
+
+- 📖 [Wiki Documentation](../../wiki)
+- 💬 [Discussions](../../discussions)
+- 🐛 [Issue Tracker](../../issues)
+- 🔒 [Security Policy](SECURITY.md)
+
+---
+**Made with ❤️ for the community**
