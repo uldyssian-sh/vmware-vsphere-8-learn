@@ -1,31 +1,29 @@
-# vmware vsphere 8 learn
+# VMware vSphere 8 Learn
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues/uldyssian-sh/vmware-vsphere-8-learn)](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/issues)
-[![GitHub stars](https://img.shields.io/github/stars/uldyssian-sh/vmware-vsphere-8-learn)](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/stargazers)
-[![Security](https://img.shields.io/badge/Security-Enterprise-blue.svg)](SECURITY.md)
+[![GitHub license](https://img.shields.io/github/license/uldyssian-sh/vmware-vsphere-8-learn)](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/blob/main/LICENSE)
+[![CI](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/workflows/CI/badge.svg)](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/actions)
 
-## 🎯 Overview
+## 🚀 Overview
 
-Professional vmware vsphere 8 learn solution with enterprise-grade automation and security features.
+Comprehensive learning resources and hands-on labs for VMware vSphere 8. Interactive tutorials, practical examples, and certification preparation materials for vSphere 8 technologies.
 
-## 📊 Repository Stats
-
-- **Files:**       34
-- **Technologies:** Python PowerShell YAML
-- **Type:** Infrastructure Automation
-- **Status:** Production Ready
+**Technology Stack:** vSphere 8, PowerCLI, Terraform, Documentation, Labs
 
 ## ✨ Features
 
-- 🏗️ **Enterprise Architecture** - Production-ready infrastructure
-- 🔒 **Zero-Trust Security** - Comprehensive security controls
-- 🚀 **CI/CD Automation** - Automated deployment pipelines
-- 📊 **Monitoring & Observability** - Complete visibility
-- 🤖 **AI Integration** - GitHub Copilot & Amazon Q
-- 🔄 **Self-Healing** - Automatic error recovery
-- 📈 **Performance Optimized** - High-performance configurations
-- 🛡️ **Compliance Ready** - SOC2, GDPR, HIPAA standards
+- 📚 **Learning Modules** - Structured learning paths
+- 🧪 **Hands-on Labs** - Practical exercises
+- 🎓 **Certification Prep** - VCP-DCV preparation
+- 📖 **Documentation** - Comprehensive guides
+- 💡 **Best Practices** - Industry standards
+- 🔧 **Automation Examples** - PowerCLI scripts
+
+## 🛠️ Prerequisites
+
+- VMware Workstation/ESXi lab environment
+- vCenter Server 8.0
+- PowerCLI 13.0+
+- Basic virtualization knowledge
 
 ## 🚀 Quick Start
 
@@ -34,182 +32,141 @@ Professional vmware vsphere 8 learn solution with enterprise-grade automation an
 git clone https://github.com/uldyssian-sh/vmware-vsphere-8-learn.git
 cd vmware-vsphere-8-learn
 
-# Setup environment
-chmod +x setup.sh
-./setup.sh
+# Set up lab environment
+./setup/deploy-lab.sh
+
+# Start learning modules
+cd modules/01-introduction
+./start-module.sh
 ```
 
+## 📋 Learning Modules
 
-## 🐍 Python Scripts
+### Module 1: vSphere 8 Introduction
+- vSphere architecture overview
+- New features in vSphere 8
+- Installation and configuration
+- Basic administration tasks
 
+### Module 2: vCenter Server Management
+- vCenter deployment options
+- Enhanced Linked Mode
+- Identity and access management
+- Certificate management
+
+### Module 3: ESXi Host Management
+- ESXi installation and configuration
+- Host profiles and auto deploy
+- Update management
+- Troubleshooting techniques
+
+### Module 4: Virtual Machine Management
+- VM creation and configuration
+- VM hardware features
+- Guest OS optimization
+- VM templates and cloning
+
+### Module 5: Storage Management
+- Storage architectures
+- vSAN configuration
+- Storage policies
+- Performance optimization
+
+### Module 6: Network Management
+- vSphere networking concepts
+- Distributed switches
+- Network security
+- NSX integration
+
+### Module 7: Resource Management
+- DRS and HA configuration
+- Resource pools
+- Performance monitoring
+- Capacity planning
+
+### Module 8: Security and Compliance
+- vSphere security features
+- Identity federation
+- Encryption capabilities
+- Compliance frameworks
+
+## 🧪 Hands-on Labs
+
+### Lab Environment Setup
 ```bash
-# Install dependencies
-pip install -r requirements.txt
+# Deploy nested ESXi lab
+./labs/setup/deploy-nested-esxi.sh
 
-# Run main script
-python main.py
+# Configure vCenter
+./labs/setup/configure-vcenter.sh
+
+# Create test workloads
+./labs/setup/create-workloads.sh
 ```
 
+### Practice Scenarios
+- Multi-site deployment
+- Disaster recovery setup
+- Performance troubleshooting
+- Security hardening
+- Automation workflows
 
-## ⚡ PowerShell Scripts
+## 🎓 Certification Preparation
+
+### VCP-DCV 2024 Topics
+- vSphere architecture and services
+- Installation, configuration, and setup
+- Performance optimization
+- Troubleshooting and administration
+- Security and compliance
+
+### Study Resources
+- Practice exams
+- Lab exercises
+- Video tutorials
+- Reference materials
+- Study guides
+
+## 📖 Documentation Structure
+
+```
+docs/
+├── architecture/          # vSphere 8 architecture
+├── installation/         # Installation guides
+├── configuration/        # Configuration procedures
+├── administration/       # Administrative tasks
+├── troubleshooting/      # Troubleshooting guides
+├── security/            # Security best practices
+└── automation/          # Automation examples
+```
+
+## 🔧 Automation Examples
 
 ```powershell
-# Set execution policy
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+# PowerCLI automation examples
+Import-Module VMware.PowerCLI
 
-# Run main script
-.\main.ps1
+# Connect to vCenter
+Connect-VIServer -Server vcenter.domain.com
+
+# Create VM from template
+New-VM -Name "TestVM" -Template "Windows2022-Template" -Datastore "vSAN-Datastore"
+
+# Configure DRS rules
+New-DrsRule -Name "Anti-Affinity-Rule" -Cluster "Production" -KeepTogether:$false
 ```
 
+## 📚 Additional Resources
 
-## 📚 Documentation
-
-- [Installation Guide](docs/installation.md)
-- [Configuration Reference](docs/configuration.md)
-- [API Documentation](docs/api.md)
-- [Troubleshooting](docs/troubleshooting.md)
-- [Security Policy](SECURITY.md)
+- [VMware Documentation](https://docs.vmware.com/en/VMware-vSphere/)
+- [PowerCLI Reference](https://developer.vmware.com/powercli)
+- [vSphere APIs](https://developer.vmware.com/apis/vsphere-automation/)
+- [Community Forums](https://communities.vmware.com/)
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see [LICENSE](LICENSE) file.
-
-## 🆘 Support
-
-- 🐛 **Issues**: [GitHub Issues](https://github.com/uldyssian-sh/REPO_NAME/issues)
-- 📖 **Documentation**: [Wiki](https://github.com/uldyssian-sh/REPO_NAME/wiki)
-
----
-
-⭐ **Star this repository if you find it helpful!**
-# VMware vSphere 8 Learning & Training Platform
-
-## 🎯 Overview
-
-Comprehensive VMware vSphere 8 learning platform with hands-on tutorials, certification preparation, and practical exercises designed for IT professionals and students.
-
-## 📚 Learning Modules
-
-### Foundation Concepts
-- **vSphere 8 Fundamentals** - Core architecture and hypervisor basics
-- **Installation & Deployment** - ESXi and vCenter Server setup procedures
-- **vCenter Server Management** - Administration and inventory management
-- **Virtual Machine Lifecycle** - VM creation, templates, and migration
-- **Storage Management** - Datastore configuration and vSAN fundamentals
-- **Networking Concepts** - Virtual switches and distributed networking
-
-### Advanced Administration
-- **Resource Management** - CPU, memory allocation, and DRS/HA configuration
-- **Security Hardening** - ESXi and vCenter security best practices
-- **Backup & Recovery** - VM backup strategies and disaster recovery
-- **Monitoring & Troubleshooting** - Performance monitoring and log analysis
-- **Automation & Scripting** - PowerCLI fundamentals and REST API usage
-- **Performance Tuning** - Optimization techniques and capacity planning
-
-### Specialized Technologies
-- **vSAN Deep Dive** - Software-defined storage architecture and policies
-- **NSX Integration** - Network virtualization and micro-segmentation
-- **Cloud Integration** - VMware Cloud on AWS and hybrid strategies
-- **Container Support** - vSphere with Tanzu and Kubernetes integration
-- **AI/ML Workloads** - GPU passthrough and workload optimization
-- **Edge Computing** - Edge deployment models and remote management
-
-### Professional Development
-- **Certification Preparation** - VCP-DCV exam objectives and practice tests
-- **Lab Exercises** - Hands-on scenarios and skill validation
-- **Best Practices** - Design recommendations and operational procedures
-- **API Programming** - vSphere API development and SDK usage
-- **DevOps Integration** - CI/CD pipelines and Infrastructure as Code
-
-### Enterprise Features
-- **Disaster Recovery** - Site Recovery Manager and business continuity
-- **Compliance & Governance** - Regulatory compliance and policy enforcement
-- **Advanced Networking** - Network I/O control and SR-IOV configuration
-- **Storage Optimization** - Deduplication, compression, and performance analysis
-- **Multi-site Deployment** - Stretched clusters and cross-site replication
-- **Upgrade & Migration** - vSphere upgrade procedures and compatibility
-
-## 📊 Learning Platform Statistics
-
-- **Total Learning Modules**: 30 comprehensive courses
-- **Hands-on Labs**: 50+ practical exercises
-- **Certification Coverage**: Complete VCP-DCV preparation
-- **Learning Paths**: Beginner to Expert progression
-- **Interactive Content**: Tutorials, labs, and assessments
-- **Community Resources**: Forums, documentation, and support
-
-## 🎓 Learning Paths
-
-### Beginner Path (0-6 months experience)
-1. vSphere 8 Fundamentals
-2. Installation & Deployment
-3. vCenter Server Management
-4. Virtual Machine Lifecycle
-5. Basic Storage & Networking
-
-### Intermediate Path (6-18 months experience)
-1. Resource Management
-2. Security Hardening
-3. Backup & Recovery
-4. Monitoring & Troubleshooting
-5. Automation & Scripting
-
-### Advanced Path (18+ months experience)
-1. vSAN Deep Dive
-2. NSX Integration
-3. Performance Tuning
-4. API Programming
-5. Enterprise Features
-
-### Certification Path (VCP-DCV Preparation)
-1. All Foundation Concepts
-2. Advanced Administration
-3. Specialized Technologies
-4. Hands-on Lab Exercises
-5. Practice Examinations
-
-## 🔧 Technical Requirements
-
-- **Lab Environment**: VMware Workstation/Fusion or physical hardware
-- **Software**: vSphere 8.0+, vCenter Server 8.0+
-- **Prerequisites**: Basic networking and virtualization knowledge
-- **Tools**: PowerCLI, vSphere Client, REST API clients
-- **Resources**: Minimum 16GB RAM, 500GB storage for labs
-
-## 💰 Cost Optimization
-
-Designed for GitHub Free tier with efficient resource usage and comprehensive learning materials.
-
-
-
-## 🎯 Advanced Learning Platform
-
-### Comprehensive Curriculum
-- Foundation to Expert: Structured paths
-- Hands-on Labs: 50+ practical exercises
-- Certification Prep: Complete VCP-DCV materials
-- Interactive Content: Videos, simulations
-
-### Modern Technologies
-- vSphere 8 Features: Latest capabilities
-- Container Integration: Tanzu and Kubernetes
-- Cloud Integration: Hybrid strategies
-- AI/ML Workloads: GPU acceleration
-
-## 📊 Learning Modules
-- Fundamentals: 2 weeks, 5 labs
-- Administration: 4 weeks, 12 labs
-- Advanced Features: 6 weeks, 18 labs
-- Expert Topics: 8 weeks, 15 labs
-
-## 🚀 Getting Started
-```bash
-git clone https://github.com/uldyssian-sh/vmware-vsphere-8-learn.git
-cd vmware-vsphere-8-learn
-./setup-lab-environment.sh
-./start-learning.sh
-```
+MIT License - see [LICENSE](LICENSE) file for details.
