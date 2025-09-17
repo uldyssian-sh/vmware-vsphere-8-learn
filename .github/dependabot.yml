@@ -4,30 +4,3 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "monday"
-      time: "09:00"
-    open-pull-requests-limit: 10
-    reviewers:
-      - "uldyssian-sh"
-    assignees:
-      - "uldyssian-sh"
-    
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-    open-pull-requests-limit: 10
-    reviewers:
-      - "uldyssian-sh"
-    assignees:
-      - "uldyssian-sh"
-
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-    open-pull-requests-limit: 5
