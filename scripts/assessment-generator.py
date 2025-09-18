@@ -7,13 +7,18 @@ Generates randomized assessments from question banks
 import json
 import random
 import argparse
+import html
+import os
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Any
 
 class AssessmentGenerator:
     def __init__(self, question_bank_path: str = "question_banks"):
-        self.question_bank_path = Path(question_bank_path)
+        # Sanitize path to prevent path traversal
+        self.question_bank_path = Path(question_bank_path).resolve()
+        if not str(self.question_bank_path).startswith(str(Path.cwd().resolve())):
+            raise ValueError("Invalid question bank path")
         self.question_banks = self.load_question_banks()
         
     def load_question_banks(self) -> Dict[str, List[Dict]]:
@@ -106,7 +111,10 @@ class AssessmentGenerator:
         # Select questions by difficulty
         for difficulty, count in questions_per_difficulty.items():
             difficulty_questions = [q for q in all_questions if q.get("difficulty") == difficulty]
-            selected = random.sample(difficulty_questions, min(count, len(difficulty_questions)))
+            available_count = len(difficulty_questions)
+            if available_count < count:
+                print(f"Warning: Only {available_count} questions available for {difficulty} difficulty, requested {count}")
+            selected = random.sample(difficulty_questions, min(count, available_count))
             selected_questions.extend(selected)
         
         # Shuffle final question order
@@ -140,7 +148,7 @@ class AssessmentGenerator:
         }
         
         total_minutes = sum(
-            time_per_type.get(q.get("type", "multiple_choice"), 2.0) 
+            time_per_type.get(q.get("type", "multiple_choice"), 1.5) 
             for q in questions
         )
         
@@ -199,20 +207,25 @@ class AssessmentGenerator:
     def export_assessment(self, assessment: Dict[str, Any], format: str = "json") -> str:
         """Export assessment to specified format"""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"assessment_{assessment['type']}_{timestamp}"
+        # Sanitize filename to prevent path traversal
+        safe_type = "".join(c for c in assessment['type'] if c.isalnum() or c in ('-', '_'))
+        filename = f"assessment_{safe_type}_{timestamp}"
         
-        if format == "json":
-            filepath = f"{filename}.json"
-            with open(filepath, 'w') as f:
-                json.dump(assessment, f, indent=2)
-                
-        elif format == "html":
-            filepath = f"{filename}.html"
-            html_content = self.generate_html_assessment(assessment)
-            with open(filepath, 'w') as f:
-                f.write(html_content)
-                
-        return filepath
+        try:
+            if format == "json":
+                filepath = f"{filename}.json"
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    json.dump(assessment, f, indent=2)
+                    
+            elif format == "html":
+                filepath = f"{filename}.html"
+                html_content = self.generate_html_assessment(assessment)
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    f.write(html_content)
+                    
+            return filepath
+        except (IOError, OSError) as e:
+            raise RuntimeError(f"Failed to export assessment: {e}")
     
     def generate_html_assessment(self, assessment: Dict[str, Any]) -> str:
         """Generate HTML version of assessment"""
@@ -255,36 +268,39 @@ class AssessmentGenerator:
 """
         
         for i, question in enumerate(assessment['questions'], 1):
+            # Escape HTML to prevent XSS
+            escaped_question = html.escape(question['question'])
             html += f"""
     <div class="question">
         <h3>Question {i}</h3>
-        <p><strong>{question['question']}</strong></p>
+        <p><strong>{escaped_question}</strong></p>
 """
             
             if question['type'] == 'multiple_choice':
                 html += '<div class="options">\n'
                 for j, option in enumerate(question['options']):
+                    escaped_option = html.escape(option)
                     html += f'''
         <div class="option">
-            <input type="radio" name="q{i}" value="{option}" id="q{i}_{j}">
-            <label for="q{i}_{j}">{option}</label>
+            <input type="radio" name="q{i}" value="{escaped_option}" id="q{i}_{j}">
+            <label for="q{i}_{j}">{escaped_option}</label>
         </div>
 '''
                 html += '</div>\n'
                 
             elif question['type'] == 'true_false':
-                html += '''
+                html += f'''
         <div class="options">
             <div class="option">
-                <input type="radio" name="q{}" value="true" id="q{}_true">
-                <label for="q{}_true">True</label>
+                <input type="radio" name="q{i}" value="true" id="q{i}_true">
+                <label for="q{i}_true">True</label>
             </div>
             <div class="option">
-                <input type="radio" name="q{}" value="false" id="q{}_false">
-                <label for="q{}_false">False</label>
+                <input type="radio" name="q{i}" value="false" id="q{i}_false">
+                <label for="q{i}_false">False</label>
             </div>
         </div>
-'''.format(i, i, i, i, i)
+'''
                 
             elif question['type'] == 'short_answer':
                 html += f'<textarea name="q{i}" rows="3" cols="50" placeholder="Enter your answer here..."></textarea>\n'

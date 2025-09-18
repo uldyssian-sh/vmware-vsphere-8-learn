@@ -16,7 +16,15 @@ class TrainingProgressTracker {
 
     loadProgress() {
         const saved = localStorage.getItem('vsphere8-progress');
-        return saved ? JSON.parse(saved) : {
+        if (saved) {
+            try {
+                return JSON.parse(saved);
+            } catch (error) {
+                console.warn('Invalid progress data in localStorage, resetting:', error);
+                localStorage.removeItem('vsphere8-progress');
+            }
+        }
+        return {
             modules: {},
             labs: {},
             assessments: {},
@@ -45,7 +53,7 @@ class TrainingProgressTracker {
         const completedModules = Object.keys(this.progress.modules).length;
         const completedLabs = Object.keys(this.progress.labs).length;
         const totalModules = this.modules.length;
-        const estimatedLabs = 15;
+        const estimatedLabs = this.constructor.ESTIMATED_LABS || 15;
 
         const moduleProgress = (completedModules / totalModules) * 100;
         const labProgress = (completedLabs / estimatedLabs) * 100;
@@ -71,11 +79,38 @@ class TrainingProgressTracker {
     }
 
     showCompletionNotification(moduleId) {
-        console.log(`Module ${moduleId} completed!`);
+        // Create and show notification
+        const notification = document.createElement('div');
+        notification.className = 'completion-notification';
+        notification.innerHTML = `
+            <div class="notification-content">
+                <h4>🎉 Congratulations!</h4>
+                <p>You completed module: ${moduleId}</p>
+                <button onclick="this.parentElement.parentElement.remove()">Close</button>
+            </div>
+        `;
+        notification.style.cssText = `
+            position: fixed; top: 20px; right: 20px; z-index: 1000;
+            background: #28a745; color: white; padding: 15px;
+            border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        `;
+        document.body.appendChild(notification);
+        
+        // Auto-remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentElement) {
+                notification.remove();
+            }
+        }, 5000);
     }
 
     initializeUI() {
-        setTimeout(() => this.updateProgressBar(), 100);
+        // Use proper DOM ready check instead of arbitrary timeout
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.updateProgressBar());
+        } else {
+            this.updateProgressBar();
+        }
     }
 }
 
