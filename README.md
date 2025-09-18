@@ -47,7 +47,7 @@ python scripts/assessment-generator.py --help
 powershell -File scripts/lab-setup.ps1 -Help
 
 # Start learning journey
-open docs/ASSESSMENT_GUIDE.md
+cat docs/ASSESSMENT_GUIDE.md
 ```
 
 ## 📋 Learning Modules
@@ -165,7 +165,6 @@ vmware-vsphere-8-learn/
 ```
 
 ## 🔧 Automation Examples
->>>>>>> b658756 (feat: comprehensive security audit and enterprise-grade improvements)
 
 ### PowerCLI Automation
 ```powershell
@@ -213,17 +212,17 @@ generator.export_assessment(assessment, "json")
 - 📖 [vSphere 8.0 Documentation](https://docs.vmware.com/en/VMware-vSphere/8.0/)
 - 🔧 [PowerCLI Developer Guide](https://developer.vmware.com/powercli)
 - 🌐 [vSphere REST API Reference](https://developer.vmware.com/apis/vsphere-automation/)
-- 📋 [Hardware Compatibility Guide](https://www.vmware.com/resources/compatibility/search.php)
+- 📋 [Hardware Compatibility Guide](https://www.vmware.com/resources/compatibility/)
 
 ### Learning Resources
 - 🎓 [VMware Learning Platform](https://www.vmware.com/education-services/)
 - 👥 [VMware Community Forums](https://communities.vmware.com/)
 - 📺 [VMware Tech Zone](https://techzone.vmware.com/)
-- 📊 [vSphere Performance Best Practices](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/techpaper/performance/vsphere-esxi-vcenter-server-70-performance-best-practices.pdf)
+- 📊 [vSphere Performance Guide](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-resource-management/)
 
 ### Certification Preparation
-- 🏆 [VCP-DCV 2024 Exam Guide](https://www.vmware.com/education-services/certification/vcp-dcv.html)
-- 📝 [Practice Exams](https://www.vmware.com/education-services/certification/vcp-dcv-practice-exam.html)
+- 🏆 [VCP-DCV Certification](https://www.vmware.com/education-services/certification/vcp-dcv.html)
+- 📝 [VMware Education](https://www.vmware.com/education-services/)
 - 🔍 [Hands-on Labs](https://labs.hol.vmware.com/)
 
 ## 🔒 Security & Compliance
