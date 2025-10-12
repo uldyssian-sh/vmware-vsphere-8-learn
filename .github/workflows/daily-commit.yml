@@ -11,7 +11,3 @@ permissions:
   security-events: write
   actions: read
 
-  schedule:
-    - cron: '0 12 * * *'  # Každý deň o 12:00 UTC
-  workflow_dispatch:  # Manuálne spustenie
-
