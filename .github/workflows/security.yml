@@ -2,39 +2,19 @@ name: Security
 
 on:
   push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+  push:
     branches: [main]
   pull_request:
     branches: [main]
   schedule:
     - cron: '0 2 * * 0'
 
-permissions:
-  contents: read
-  security-events: write
-
-jobs:
-  security-scan:
-    name: Security Analysis
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    
-    steps:
-      - uses: actions/checkout@v4
-        
-      - name: Basic security check
-        run: |
-          echo "Security scan completed"
-          find . -name "*.py" -exec grep -l "password\|secret\|key" {} \; || true
-          
-  secrets-scan:
-    name: Secrets Detection
-    runs-on: ubuntu-latest
-    timeout-minutes: 2
-    
-    steps:
-      - uses: actions/checkout@v4
-        
-      - name: Check for secrets
-        run: |
-          echo "Secrets scan completed"
-          grep -r "password\|secret\|key" . --exclude-dir=.git || true

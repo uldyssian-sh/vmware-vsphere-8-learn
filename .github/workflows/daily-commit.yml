@@ -1,33 +1,17 @@
 name: Daily Commit
 
 on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
   schedule:
     - cron: '0 12 * * *'  # Každý deň o 12:00 UTC
   workflow_dispatch:  # Manuálne spustenie
 
-permissions:
-  contents: write
-
-jobs:
-  daily-commit:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Create daily contribution
-        run: |
-          # Vytvor súbor s dnešným dátumom
-          echo "Daily contribution: $(date '+%Y-%m-%d %H:%M:%S')" >> daily-contributions.log
-          echo "Repository activity maintained" >> daily-contributions.log
-          echo "---" >> daily-contributions.log
-          
-      - name: Commit and push
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add daily-contributions.log
-          git diff --staged --quiet || git commit -m "Daily contribution: $(date '+%Y-%m-%d')"
-          git push
