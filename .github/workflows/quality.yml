@@ -2,13 +2,20 @@ name: Code Quality
 
 on:
   push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+  push:
     branches: [main]
   pull_request:
     branches: [main]
 
-permissions:
-  contents: read
-  actions: read
   security-events: write
   pull-requests: write
   issues: write
