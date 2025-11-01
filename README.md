@@ -9,6 +9,8 @@
 
 Enterprise-grade learning platform for VMware vSphere 8 with comprehensive hands-on labs, interactive tutorials, and VCP-DCV certification preparation materials. Built with modern DevOps practices and automated CI/CD pipelines.
 
+> 🚀 **New**: Enhanced automation scripts and improved lab exercises for 2024!
+
 **Technology Stack:** vSphere 8.0, PowerCLI 13+, Python 3.9+, JavaScript ES6+, GitHub Actions
 
 ## ✨ Features
@@ -254,7 +256,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-**Last Updated**: 2024-12-19 15:30:00 UTC  
+**Last Updated**: 2024-12-26 14:45:00 UTC  
 **Repository**: [uldyssian-sh/vmware-vsphere-8-learn](https://github.com/uldyssian-sh/vmware-vsphere-8-learn)  
 **Issues**: [Report bugs or request features](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/issues)
 # CodeQL trigger Sun Oct 12 16:29:10 CEST 2025
