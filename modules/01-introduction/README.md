@@ -77,4 +77,4 @@ By the end of this module, participants will be able to:
 - [Hardware Compatibility Guide](https://www.vmware.com/resources/compatibility/)
 
 ## Next Module
-[Module 2: ESXi Host Deployment](../02-esxi-deployment/README.md)
+[Module 2: ESXi Host Deployment](../02-esxi-deployment/README.md)# Updated Sun Nov  9 12:49:17 CET 2025

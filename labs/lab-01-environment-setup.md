@@ -173,3 +173,4 @@ Upon completion of this lab, you should have:
 - ✅ Validated basic configuration
 
 **Ready for**: [Lab 2: ESXi Host Configuration](lab-02-esxi-configuration.md)# Updated 20251109_123844
+# Updated Sun Nov  9 12:49:17 CET 2025
