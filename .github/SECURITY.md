@@ -143,3 +143,4 @@ safety check
 **Security Framework**: OWASP, NIST, CWE  
 **Contact**: [Security Advisories](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/security/advisories)# Updated Sun Nov  9 12:49:17 CET 2025
 # Updated Sun Nov  9 12:52:43 CET 2025
+# Updated Sun Nov  9 12:55:59 CET 2025

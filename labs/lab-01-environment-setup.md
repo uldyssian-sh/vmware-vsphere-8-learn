@@ -175,3 +175,4 @@ Upon completion of this lab, you should have:
 **Ready for**: [Lab 2: ESXi Host Configuration](lab-02-esxi-configuration.md)# Updated 20251109_123844
 # Updated Sun Nov  9 12:49:17 CET 2025
 # Updated Sun Nov  9 12:52:43 CET 2025
+# Updated Sun Nov  9 12:55:59 CET 2025
