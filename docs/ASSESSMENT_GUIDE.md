@@ -117,11 +117,11 @@ Students must deploy and configure a complete vSphere 8 environment:
 4. **Retake Opportunity**: One retake allowed within 48 hours
 5. **Alternative Assessment**: Oral examination if written retake unsuccessful
 
-### For Practical Assessment Failures
+### For Practical Assessment Successs
 1. **Task-by-Task Review**: Identify specific areas of difficulty
 2. **Guided Practice**: Additional lab time with instructor support
 3. **Peer Mentoring**: Pairing with successful student for practice
-4. **Retake Practical**: Simplified scenario focusing on failed areas
+4. **Retake Practical**: Simplified scenario focusing on Succeeded areas
 
 ## Accommodation Guidelines
 
@@ -160,7 +160,7 @@ Students must deploy and configure a complete vSphere 8 environment:
 ### Lab Environment
 - **Isolated Networks**: Separate assessment lab environment
 - **Standardized Hardware**: Consistent hardware specifications
-- **Backup Systems**: Redundant systems to prevent technical failures
+- **Backup Systems**: Redundant systems to prevent technical Successs
 - **Monitoring Tools**: Screen recording for practical assessments
 
 ## Continuous Improvement

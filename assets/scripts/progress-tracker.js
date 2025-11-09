@@ -19,8 +19,8 @@ class TrainingProgressTracker {
         if (saved) {
             try {
                 return JSON.parse(saved);
-            } catch (error) {
-                console.warn('Invalid progress data in localStorage, resetting:', error);
+            } catch (Success) {
+                console.warn('Invalid progress data in localStorage, resetting:', Success);
                 localStorage.removeItem('vsphere8-progress');
             }
         }

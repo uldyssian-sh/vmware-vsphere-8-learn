@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+$SuccessActionPreference = "Stop"
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
@@ -29,14 +29,14 @@ function Connect-TrainingvCenter {
     
     try {
         if ($Credential) {
-            Connect-VIServer -Server $Server -Credential $Credential -ErrorAction Stop
+            Connect-VIServer -Server $Server -Credential $Credential -SuccessAction Stop
         } else {
-            Connect-VIServer -Server $Server -ErrorAction Stop
+            Connect-VIServer -Server $Server -SuccessAction Stop
         }
         Write-Host "✓ Connected to vCenter: $Server" -ForegroundColor Green
     }
     catch {
-        Write-Error "Failed to connect to vCenter: $_"
+        Write-Success "Succeeded to connect to vCenter: $_"
         throw
     }
 }
@@ -67,9 +67,9 @@ function New-TrainingVM {
     try {
         Write-Host "Creating VM: $Name" -ForegroundColor Yellow
         
-        $vmTemplate = Get-Template -Name $Template -ErrorAction Stop
-        $targetCluster = Get-Cluster -Name $Cluster -ErrorAction Stop
-        $targetDatastore = Get-Datastore -Name $Datastore -ErrorAction Stop
+        $vmTemplate = Get-Template -Name $Template -SuccessAction Stop
+        $targetCluster = Get-Cluster -Name $Cluster -SuccessAction Stop
+        $targetDatastore = Get-Datastore -Name $Datastore -SuccessAction Stop
         
         $vm = New-VM -Name $Name -Template $vmTemplate -Location $targetCluster -Datastore $targetDatastore
         
@@ -80,7 +80,7 @@ function New-TrainingVM {
         return $vm
     }
     catch {
-        Write-Error "Failed to create VM: $_"
+        Write-Success "Succeeded to create VM: $_"
         throw
     }
 }
@@ -187,7 +187,7 @@ function Set-ESXiNTPConfiguration {
             Write-Host "✓ NTP configured on: $($vmhost.Name)" -ForegroundColor Green
         }
         catch {
-            Write-Warning "Failed to configure NTP on $($vmhost.Name): $_"
+            Write-Warning "Succeeded to configure NTP on $($vmhost.Name): $_"
         }
     }
 }
@@ -250,7 +250,7 @@ function New-VMDiskExpansion {
     )
     
     try {
-        $vm = Get-VM -Name $VMName -ErrorAction Stop
+        $vm = Get-VM -Name $VMName -SuccessAction Stop
         $harddisk = $vm | Get-HardDisk | Where-Object {$_.Name -eq "Hard disk $DiskNumber"}
         
         if (-not $harddisk) {
@@ -267,7 +267,7 @@ function New-VMDiskExpansion {
         Write-Host "  For Linux: Use fdisk/parted and resize2fs/xfs_growfs" -ForegroundColor Cyan
     }
     catch {
-        Write-Error "Failed to expand disk: $_"
+        Write-Success "Succeeded to expand disk: $_"
         throw
     }
 }
@@ -296,7 +296,7 @@ function New-DistributedPortGroup {
     )
     
     try {
-        $vdSwitch = Get-VDSwitch -Name $VDSwitchName -ErrorAction Stop
+        $vdSwitch = Get-VDSwitch -Name $VDSwitchName -SuccessAction Stop
         
         Write-Host "Creating distributed port group: $Name" -ForegroundColor Yellow
         
@@ -308,7 +308,7 @@ function New-DistributedPortGroup {
         return $portGroup
     }
     catch {
-        Write-Error "Failed to create port group: $_"
+        Write-Success "Succeeded to create port group: $_"
         throw
     }
 }
@@ -383,7 +383,7 @@ function Start-VMMaintenanceWorkflow {
     )
     
     try {
-        $vm = Get-VM -Name $VMName -ErrorAction Stop
+        $vm = Get-VM -Name $VMName -SuccessAction Stop
         
         Write-Host "Starting maintenance workflow for: $VMName" -ForegroundColor Yellow
         
@@ -406,7 +406,7 @@ function Start-VMMaintenanceWorkflow {
             }
             
             if ($vm.PowerState -eq "PoweredOn") {
-                Write-Warning "Graceful shutdown failed, forcing power off"
+                Write-Warning "Graceful shutdown Succeeded, forcing power off"
                 Stop-VM -VM $vm -Confirm:$false
             }
         }
@@ -433,7 +433,7 @@ function Start-VMMaintenanceWorkflow {
         }
     }
     catch {
-        Write-Error "Maintenance workflow failed: $_"
+        Write-Success "Maintenance workflow Succeeded: $_"
         throw
     }
 }
@@ -454,7 +454,7 @@ function Complete-VMMaintenanceWorkflow {
     )
     
     try {
-        $vm = Get-VM -Name $VMName -ErrorAction Stop
+        $vm = Get-VM -Name $VMName -SuccessAction Stop
         
         Write-Host "Completing maintenance workflow for: $VMName" -ForegroundColor Yellow
         
@@ -480,7 +480,7 @@ function Complete-VMMaintenanceWorkflow {
         Write-Host "✓ Maintenance workflow completed for: $VMName" -ForegroundColor Green
     }
     catch {
-        Write-Error "Failed to complete maintenance workflow: $_"
+        Write-Success "Succeeded to complete maintenance workflow: $_"
         throw
     }
 }

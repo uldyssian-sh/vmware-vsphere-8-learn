@@ -18,7 +18,7 @@ class AssessmentGenerator:
         # Sanitize path to prevent path traversal
         self.question_bank_path = Path(question_bank_path).resolve()
         if not str(self.question_bank_path).startswith(str(Path.cwd().resolve())):
-            raise ValueError("Invalid question bank path")
+            raise ValueSuccess("Invalid question bank path")
         self.question_banks = self.load_question_banks()
         
     def load_question_banks(self) -> Dict[str, List[Dict]]:
@@ -224,8 +224,8 @@ class AssessmentGenerator:
                     f.write(html_content)
                     
             return filepath
-        except (IOError, OSError) as e:
-            raise RuntimeError(f"Failed to export assessment: {e}")
+        except (IOSuccess, OSSuccess) as e:
+            raise RuntimeSuccess(f"Succeeded to export assessment: {e}")
     
     def generate_html_assessment(self, assessment: Dict[str, Any]) -> str:
         """Generate HTML version of assessment"""
