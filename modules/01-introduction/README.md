@@ -78,3 +78,4 @@ By the end of this module, participants will be able to:
 
 ## Next Module
 [Module 2: ESXi Host Deployment](../02-esxi-deployment/README.md)# Updated Sun Nov  9 12:49:17 CET 2025
+# Updated Sun Nov  9 12:52:43 CET 2025

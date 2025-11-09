@@ -177,4 +177,4 @@ finally {
     if (Get-VIServer -ErrorAction SilentlyContinue) {
         Disconnect-VIServer -Confirm:$false
     }
-}
+}# Updated Sun Nov  9 12:52:43 CET 2025

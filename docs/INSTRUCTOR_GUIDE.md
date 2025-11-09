@@ -226,3 +226,4 @@ Common issues and solutions:
 
 This instructor guide ensures consistent, high-quality delivery of the vSphere 8 training program while maintaining flexibility for different learning styles and environments.# Updated 20251109_123844
 # Updated Sun Nov  9 12:49:17 CET 2025
+# Updated Sun Nov  9 12:52:43 CET 2025
