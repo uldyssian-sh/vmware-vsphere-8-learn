@@ -139,6 +139,5 @@ safety check
 
 ---
 
-**Last Updated**: $(date -u +"%Y-%m-%d")  
 **Security Framework**: OWASP, NIST, CWE  
 **Contact**: [Security Advisories](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/security/advisories)

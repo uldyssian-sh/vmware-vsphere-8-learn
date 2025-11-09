@@ -256,7 +256,6 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-**Last Updated**: 2024-12-26 14:45:00 UTC  
 **Repository**: [uldyssian-sh/vmware-vsphere-8-learn](https://github.com/uldyssian-sh/vmware-vsphere-8-learn)  
 **Issues**: [Report bugs or request features](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/issues)
 # CodeQL trigger Sun Oct 12 16:29:10 CEST 2025
