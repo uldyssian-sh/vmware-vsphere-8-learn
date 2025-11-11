@@ -1,5 +1,11 @@
 # VMware vSphere 8 Learning Platform
 
+[![License](https://img.shields.io/github/license/uldyssian-sh/vmware-vsphere-8-learn?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)](#)
+[![Languages](https://img.shields.io/github/languages/count/uldyssian-sh/vmware-vsphere-8-learn?style=flat-square)](#)
+[![Size](https://img.shields.io/github/repo-size/uldyssian-sh/vmware-vsphere-8-learn?style=flat-square)](#)
+[![Security Scan](https://img.shields.io/badge/security-scanned-green?style=flat-square)](#)
+
 [![GitHub license](https://img.shields.io/github/license/uldyssian-sh/vmware-vsphere-8-learn)](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/blob/main/LICENSE)
 [![CI](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/workflows/CI/badge.svg)](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/actions)
 [![Security Scan](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/workflows/Security/badge.svg)](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/actions)
@@ -37,6 +43,12 @@ Enterprise-grade learning platform for VMware vSphere 8 with comprehensive hands
 
 ```bash
 # Clone repository
+
+[![License](https://img.shields.io/github/license/uldyssian-sh/vmware-vsphere-8-learn?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)](#)
+[![Languages](https://img.shields.io/github/languages/count/uldyssian-sh/vmware-vsphere-8-learn?style=flat-square)](#)
+[![Size](https://img.shields.io/github/repo-size/uldyssian-sh/vmware-vsphere-8-learn?style=flat-square)](#)
+[![Security Scan](https://img.shields.io/badge/security-scanned-green?style=flat-square)](#)
 git clone https://github.com/uldyssian-sh/vmware-vsphere-8-learn.git
 cd vmware-vsphere-8-learn
 
