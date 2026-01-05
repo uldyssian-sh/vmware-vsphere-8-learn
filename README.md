@@ -255,3 +255,6 @@ MIT License - see [LICENSE](LICENSE) file for details.
 **Issues**: [Report bugs or request features](https://github.com/uldyssian-sh/vmware-vsphere-8-learn/issues)
 
 ⭐ Star this repository if you find it helpful!
+Maintained by: uldyssian-sh
+
+Disclaimer: Use of this code is at your own risk. Author bears no responsibility for any damages caused by the code.
